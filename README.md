@@ -1,4 +1,4 @@
-# Accelerating OPE for Confounded POMDPs
+# STATS 607 Final Project: Accelerating OPE for Confounded POMDPs
 This repo reproduces the simulation setting from the NeurIPS 2022 paper on off-policy evaluation (OPE) in episodic POMDPs under nonparametric models, and focuses on an optimized implementation.
 
 The core estimator is a **sequential** FQE-style recursion with minimax estimation of NPIV problems at each time step. The recursion over time `t` is preserved. The implementation emphasizes engineering improvements for speed and usability: vectorized trajectory collection, more stable RKHS linear algebra, cross-platform sweep scripts, and optional CPU parallelization over random seeds.
@@ -28,6 +28,7 @@ POMDP/
    - plot_results.py       # Create 4-panel figures from results/tables/*.csv
    - demo_sweep.py         # The scripts for a demo. Run by demo_sweep.cmd
   agents.py                # Policy base class used by ContPolicy in ContSimuOffPolicy.py
+  .gitignore               # gitignore file
   ContSimuOffPolicy.py     # Main entry point: run one (T,n,epsilon) job over n_sims seeds
   envs.py                  # Confounded continuous POMDP environment (Gymnasium-style API)
   demo_sweep.cmd           # Run a demo
